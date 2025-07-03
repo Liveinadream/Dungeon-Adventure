@@ -1,0 +1,156 @@
+[gd_scene load_steps=19 format=3 uid="uid://x43pb76sxh8h"]
+
+[ext_resource type="Script" uid="uid://jgxwegcukpeu" path="res://Scripts/abilities/Bomb.cs" id="1_88hrg"]
+[ext_resource type="Texture2D" uid="uid://f6egr20uq8yf" path="res://Assets/Sprites/Effects/Explosion/1.png" id="1_jenfv"]
+[ext_resource type="Texture2D" uid="uid://ics5oeaahbqq" path="res://Assets/Sprites/Effects/Explosion/Bomb.png" id="2_wxr5w"]
+[ext_resource type="Texture2D" uid="uid://dv5cts52g1mww" path="res://Assets/Sprites/Effects/Explosion/2.png" id="3_l4ylm"]
+[ext_resource type="Texture2D" uid="uid://bn4y0gac6q8jh" path="res://Assets/Sprites/Effects/Explosion/3.png" id="4_88hrg"]
+[ext_resource type="Texture2D" uid="uid://b6uhvw2byo1t4" path="res://Assets/Sprites/Effects/Explosion/4.png" id="5_ybchx"]
+[ext_resource type="Texture2D" uid="uid://cnjiy4ubpkm6y" path="res://Assets/Sprites/Effects/Explosion/5.png" id="6_3sv3n"]
+[ext_resource type="Texture2D" uid="uid://dclvd1vdi64oc" path="res://Assets/Sprites/Effects/Explosion/6.png" id="7_cebo5"]
+[ext_resource type="Texture2D" uid="uid://b5y1ig6x62ay6" path="res://Assets/Sprites/Effects/Explosion/7.png" id="8_cqb86"]
+[ext_resource type="Texture2D" uid="uid://s6ft2rcq04ul" path="res://Assets/Sprites/Effects/Explosion/8.png" id="9_g20tf"]
+[ext_resource type="Texture2D" uid="uid://c6ykbfesfw481" path="res://Assets/Sprites/Effects/Explosion/9.png" id="10_13gx2"]
+[ext_resource type="Texture2D" uid="uid://dlq0eav0bm7ho" path="res://Assets/Sprites/Effects/Explosion/10.png" id="11_xyku3"]
+[ext_resource type="Script" uid="uid://c3mcs37nna1nf" path="res://Scripts/abilities/AbilityHitbox.cs" id="13_ybchx"]
+
+[sub_resource type="Animation" id="Animation_q35cb"]
+resource_name = "Expand"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pixel_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.01, 0.02]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wxr5w")]
+}
+
+[sub_resource type="Animation" id="Animation_kdc6y"]
+resource_name = "Explosion"
+length = 0.416671
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041943, 0.0838861, 0.125829, 0.16945, 0.208037, 0.251658, 0.291924, 0.333867, 0.37581, 0.416671),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_jenfv"), ExtResource("3_l4ylm"), ExtResource("4_88hrg"), ExtResource("5_ybchx"), ExtResource("6_3sv3n"), ExtResource("7_cebo5"), ExtResource("8_cqb86"), ExtResource("9_g20tf"), ExtResource("1_jenfv"), ExtResource("10_13gx2"), ExtResource("11_xyku3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:pixel_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.02]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hitbox/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.125),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wxr5w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:pixel_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_jenfv")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Hitbox/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jenfv"]
+_data = {
+&"Expand": SubResource("Animation_q35cb"),
+&"Explosion": SubResource("Animation_kdc6y"),
+&"RESET": SubResource("Animation_wxr5w")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l4ylm"]
+radius = 3.0
+
+[node name="Bomb" type="Node3D" node_paths=PackedStringArray("PlayerNode")]
+script = ExtResource("1_88hrg")
+PlayerNode = NodePath("AnimationPlayer")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_jenfv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite3D")
+libraries = {
+&"": SubResource("AnimationLibrary_jenfv")
+}
+autoplay = "Explosion"
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("13_ybchx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("SphereShape3D_l4ylm")
+disabled = true

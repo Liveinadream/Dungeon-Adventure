@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://wt8m55tgscxk"]
+
+[ext_resource type="Script" uid="uid://j2fxbm5yeu81" path="res://Scripts/Character/StateMachine.cs" id="1_kktlr"]
+[ext_resource type="Script" uid="uid://cvc4te8vxbvie" path="res://Scripts/Character/Player/PlayerMoveState.cs" id="2_qkyyp"]
+[ext_resource type="Script" uid="uid://huk3j5ma1ac2" path="res://Scripts/Character/Player/PlayerIdleState.cs" id="3_707dn"]
+[ext_resource type="Script" uid="uid://cyyuukhmliteg" path="res://Scripts/Character/Player/PlayerDashState.cs" id="4_x2o6m"]
+
+[node name="StateMachine" type="Node" node_paths=PackedStringArray("currentState", "states")]
+script = ExtResource("1_kktlr")
+currentState = NodePath("IdleState")
+states = [null, null, null]
+
+[node name="MoveState" type="Node" parent="."]
+script = ExtResource("2_qkyyp")
+
+[node name="IdleState" type="Node" parent="."]
+script = ExtResource("3_707dn")
+
+[node name="DashState" type="Node" parent="." node_paths=PackedStringArray("dashTimerNode")]
+script = ExtResource("4_x2o6m")
+dashTimerNode = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="DashState"]
+wait_time = 0.4
+one_shot = true
